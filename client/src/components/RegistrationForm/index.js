@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -22,7 +21,6 @@ export default function RegistrationForm() {
         showPassword: false,
     });
     const [submitted, setSubmitted] = useState(false);
-    const [valid, setValid] = useState(false);
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -38,22 +36,7 @@ export default function RegistrationForm() {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        if ( values.fullName && values.email && values.password ) {
-            setValid(true);
-        }
         setSubmitted(true);
-
-        try {
-            const res = await axios.post('/api/register', {
-                fullName: 'Fred',
-                email: 'Flintstone',
-                password: '55577'
-            });
-            console.log(`Status code: ${res.status}`);
-        } catch (err) {
-            // Handle Error Here
-            console.error(err);
-        }
     }
 
     const classes = useStyles();
@@ -115,10 +98,10 @@ export default function RegistrationForm() {
                 </FormControl>
                 <FormControl fullWidth>
                     <InputLabel 
-                        htmlFor="password"
+                        htmlFor="confirm-password"
                     >Password Confirmation</InputLabel>
                     <Input
-                        id="password"
+                        id="confirm-password"
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password}
                         onChange={handleChange('password')}
@@ -140,7 +123,7 @@ export default function RegistrationForm() {
                     fullWidth
                     size="large"
                     onClick={handleFormSubmit}>
-                    Sign Up
+                    Sign up
                 </SubmitButton>
             </form>
         </>

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
 	Link
 } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function Login() {
                             <span>Or</span>
                         </span>
                         <div className={classes.registerBlock}>
-                            <p>Don't have an account? <Link to="/registration">Register now.</Link></p>
+                            <p>Don't have an account? <Link to="/registration">Sign up now.</Link></p>
                         </div>
                     </main>
                 </Grid>

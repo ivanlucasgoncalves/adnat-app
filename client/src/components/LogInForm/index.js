@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from 'react';
 import {
-	Link,
-    Redirect
+	Link
 } from "react-router-dom";
-import axios from 'axios';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -24,9 +22,7 @@ export default function LogInForm() {
         password: '',
         showPassword: false,
     });
-    const [valid, setValid] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    const [logged, setLogged] = useState(false);
 
     useEffect(() => {
         handleSubmit;
@@ -44,34 +40,12 @@ export default function LogInForm() {
         event.preventDefault();
     }
 
-    const handleSubmit = async (event) => {
-        
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const { email, password } = values;
-
-        if ( email && password ) {
-            setValid(true);
-            try {
-                const res = await axios.post('/api/login', {
-                    email: 'Flintstone',
-                    password: '55577'
-                });
-                if( res.status === 200 ) {
-                    setLogged(true);
-                }
-            } catch (err) {
-                // Handle Error Here
-                console.error(err);
-            }
-        }
         setSubmitted(true);
     }
 
     const classes = useStyles();
-
-    if ( logged ) {
-        return <Redirect to="/events-list"/>;
-    }
 
     return (
         <>

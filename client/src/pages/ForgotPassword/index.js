@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -15,7 +15,7 @@ export default function ForgotPassword() {
             <Grid container justifyContent="center" style={{ height: '100vh' }}>
                 <Grid item>
                     <HeaderSmall />
-                    <h1 style={{ lineHeight: .9 }}>Forgot password</h1>
+                    <h1 style={{ lineHeight: .9 }}>Forgot Password</h1>
                     <p style={{ marginTop: '5px' }}>Type your account email below. We will send you a link to reset your password.</p>
                     <main className={classes.appMain}>
                         <ResetPassword />

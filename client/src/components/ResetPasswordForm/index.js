@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -9,7 +9,7 @@ import SubmitButton from '../../styles/global';
 import useStyles from './styles';
 
 export default function ResetPassword() {
-    const [values, setValues] = React.useState({
+    const [values, setValues] = useState({
         email: ''
     });
 
