@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
     typography: {
         fontFamily: [
             'Inter',
@@ -12,8 +12,8 @@ const theme = createMuiTheme({
         MuiCssBaseline: {
             '@global': {
                 body: {
-                    backgroundColor: '#5CBD6F',
-                    color: '#FFFFFF',
+                    backgroundColor: '#F5F9FD',
+                    color: '#171F28',
                 },
                 h1: {
                     fontSize: '40px',
@@ -23,30 +23,30 @@ const theme = createMuiTheme({
         },
         MuiInputLabel: {
             root: {
-                color: 'white',
+                color: '#171F28',
                 "&$focused": {
-                    color: 'white',
+                    color: '#171F28',
                 }
             }
         },
         MuiInput: {
             root: {
-                color: 'white',
+                color: '#171F28',
                 "&$focused": {
-                    "color": "white"
+                    "color": "#171F28"
                 }
             },
             underline: {
                 '&:before': {
-                    borderBottom: '2px solid white',
+                    borderBottom: '2px solid #171F28',
                 },
                 '&:after': {
-                    borderBottom: '2px solid white',
+                    borderBottom: '2px solid #171F28',
                 },
                 '&:hover': {
                     '&:not(.Mui-disabled)': {
                         '&:before': {
-                            borderBottom: '2px solid white',
+                            borderBottom: '2px solid #171F28',
                         }
                     }
                 }

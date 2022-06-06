@@ -10,7 +10,7 @@ const useStyles = makeStyles({
         }
     },
     forgotLink: {
-        color: '#FFFFFF',
+        color: '#358FC4',
         textDecoration: 'none',
         display: 'inline-block'
     },

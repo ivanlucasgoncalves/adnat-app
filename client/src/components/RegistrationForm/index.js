@@ -60,7 +60,6 @@ export default function RegistrationForm() {
 
     return (
         <>
-            {/* {submitted && <div class='success-message'>Success! Thank you for registering</div>} */}
             <form 
                 noValidate 
                 autoComplete="off" 
@@ -92,17 +91,6 @@ export default function RegistrationForm() {
                 </FormControl>
                 <FormControl fullWidth>
                     <InputLabel 
-                        htmlFor="phone"
-                    >Phone ( optional )</InputLabel>
-                    <Input
-                        id="phone"
-                        type="text"
-                        value={values.phone}
-                        onChange={handleChange('phone')}
-                    />
-                </FormControl>
-                <FormControl fullWidth>
-                    <InputLabel 
                         htmlFor="password"
                     >Password</InputLabel>
                     <Input
@@ -123,13 +111,36 @@ export default function RegistrationForm() {
                         }
                     />
                     {submitted && !values.password && <span id='password-error' style={{ fontSize: '12px' }}>Please enter your password</span>}
-                    <span style={{ marginTop: '5px', fontSize: '12px' }}>It must include numbers, letters and special characters.</span>
+                    <span style={{ marginTop: '5px', fontSize: '12px' }}>( 6 characters minimum )</span>
+                </FormControl>
+                <FormControl fullWidth>
+                    <InputLabel 
+                        htmlFor="password"
+                    >Password Confirmation</InputLabel>
+                    <Input
+                        id="password"
+                        type={values.showPassword ? 'text' : 'password'}
+                        value={values.password}
+                        onChange={handleChange('password')}
+                        endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            >
+                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                        }
+                    />
+                    {submitted && !values.password && <span id='password-error' style={{ fontSize: '12px' }}>Please confirm your password</span>}
                 </FormControl>
                 <SubmitButton 
                     fullWidth
                     size="large"
                     onClick={handleFormSubmit}>
-                    Confirm registration
+                    Sign Up
                 </SubmitButton>
             </form>
         </>

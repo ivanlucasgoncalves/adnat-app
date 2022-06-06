@@ -19,13 +19,13 @@ const useStyles = makeStyles({
         '& span': {
             paddingLeft: '15px',
             paddingRight: '15px',
-            backgroundColor: '#5CBD6F',
+            backgroundColor: '#F5F9FD',
         },
         "&::after": {
             content: "''",
             width: '100%',
             height: '1px',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#171F28',
             position: 'absolute',
             top: '50%',
             left: '0',
@@ -35,9 +35,9 @@ const useStyles = makeStyles({
     registerBlock: {
         backgroundColor: '#FFFFFF',
         padding: '15px',
-        color: '#000000',
+        color: '#171F28',
         '& a': {
-            color: '#5CBD6F',
+            color: '#358FC4',
             textDecoration: 'none',
             fontWeight: 'bold'
         }

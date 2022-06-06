@@ -12,10 +12,10 @@ export default function ForgotPassword() {
     const classes = useStyles();
     return (
         <Container maxWidth="xs">
-            <Grid container justify="center" style={{ height: '100vh' }}>
+            <Grid container justifyContent="center" style={{ height: '100vh' }}>
                 <Grid item>
                     <HeaderSmall />
-                    <h1 style={{ lineHeight: .9 }}>Reset password</h1>
+                    <h1 style={{ lineHeight: .9 }}>Forgot password</h1>
                     <p style={{ marginTop: '5px' }}>Type your account email below. We will send you a link to reset your password.</p>
                     <main className={classes.appMain}>
                         <ResetPassword />
