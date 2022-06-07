@@ -16,8 +16,8 @@ export default function RegistrationForm() {
     const [values, setValues] = useState({
         fullName: '',
         email: '',
-        phone: '',
         password: '',
+        confirmPassword: '',
         showPassword: false,
     });
     const [submitted, setSubmitted] = useState(false);
@@ -103,8 +103,8 @@ export default function RegistrationForm() {
                     <Input
                         id="confirm-password"
                         type={values.showPassword ? 'text' : 'password'}
-                        value={values.password}
-                        onChange={handleChange('password')}
+                        value={values.confirmPassword}
+                        onChange={handleChange('confirmPassword')}
                         endAdornment={
                         <InputAdornment position="end">
                             <IconButton
@@ -117,7 +117,7 @@ export default function RegistrationForm() {
                         </InputAdornment>
                         }
                     />
-                    {submitted && !values.password && <span id='password-error' style={{ fontSize: '12px' }}>Please confirm your password</span>}
+                    {submitted && !values.confirmPassword && <span id='password-error' style={{ fontSize: '12px' }}>Please confirm your password</span>}
                 </FormControl>
                 <SubmitButton 
                     fullWidth

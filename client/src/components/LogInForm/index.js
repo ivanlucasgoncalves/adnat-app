@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
 	Link
 } from "react-router-dom";
@@ -23,10 +22,6 @@ export default function LogInForm() {
         showPassword: false,
     });
     const [submitted, setSubmitted] = useState(false);
-
-    useEffect(() => {
-        handleSubmit;
-    });
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });

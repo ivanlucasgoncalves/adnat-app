@@ -1,5 +1,3 @@
-
-
 import useStyles from './styles';
 
 export default function Header() {

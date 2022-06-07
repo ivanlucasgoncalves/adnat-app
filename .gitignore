@@ -20,6 +20,7 @@ browser-sync.config.js
 browser-sync.js
 package-lock.json
 composer.lock
+build
 
 # ------------------------------------------------------------------------
 # This file specifies intentionally untracked files that Git should ignore

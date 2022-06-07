@@ -4,15 +4,15 @@
 
 #### Run build
 
-The easiest way to get set up locally is to run the build script inside the client folder, like so:
+The easiest way to get set up locally is to run the build script, like so:
 
 ```
-npm install
+./scripts/build.sh
 ```
 
 #### Dev Watch Task
 
-Run the dev build locally to run the watch task to automaticaly build files as you work. *It must run in the root folder.
+Run the dev build locally to run the watch task to automaticaly build files as you work.
 
 ```bash
 npm run client
