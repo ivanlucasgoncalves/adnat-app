@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     appForm: {
         '& > *': {
-            marginBottom: '15px',
+            marginBottom: '15px !important',
             '&:last-child': {
                 marginBottom: '0'
             }
