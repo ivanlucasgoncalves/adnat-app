@@ -6,7 +6,7 @@ export default function InputSubmit( props ) {
             fullWidth
             size="large"
             onClick={props.onHandleClick}>
-            Log in
+            { '' !== props.value && props.value }
         </SubmitButton>
     )
 }

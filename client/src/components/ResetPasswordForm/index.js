@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-
-import SubmitButton from '../../styles/global';
+import InputEmail from '../InputFields/InputEmail';
+import InputSubmit from '../InputFields/InputSubmit';
 
 import useStyles from './styles';
 
@@ -12,10 +9,16 @@ export default function ResetPassword() {
     const [values, setValues] = useState({
         email: ''
     });
+    const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSubmitted(true);
+    }
 
     const classes = useStyles();
 
@@ -25,22 +28,14 @@ export default function ResetPassword() {
                 noValidate 
                 autoComplete="off" 
                 className={classes.appForm}>
-                <FormControl fullWidth>
-                    <InputLabel 
-                        htmlFor="email"
-                    >Your email</InputLabel>
-                    <Input
-                        id="email"
-                        type="email"
-                        value={values.email}
-                        onChange={handleChange('email')}
-                    />
-                </FormControl>
-                <SubmitButton 
-                    fullWidth
-                    size="large">
-                    Send reset password link
-                </SubmitButton>
+
+                <InputEmail 
+                    value={values.email}
+                    onHandleChange={handleChange}
+                    onSubmitted={submitted} />
+                <InputSubmit
+                    value="Send reset password link"
+                    onHandleClick={handleSubmit} />
             </form>
         </>
     )

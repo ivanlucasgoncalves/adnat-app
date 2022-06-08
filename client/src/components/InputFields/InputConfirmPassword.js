@@ -6,17 +6,17 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 
-export default function InputPassword( props ) {
+export default function InputConfirmPassword( props ) {
     return (
         <FormControl fullWidth>
             <InputLabel 
-                htmlFor="password"
-            >Password</InputLabel>
+                htmlFor="confirm-password"
+            >Password Confirmation</InputLabel>
             <Input
-                id="password"
+                id="confirm-password"
                 type={props.showPassword ? 'text' : 'password'}
                 value={props.value}
-                onChange={props.onHandleChange( 'password' )}
+                onChange={props.onHandleChange( 'confirmPassword' )}
                 endAdornment={
                 <InputAdornment position="end">
                     <IconButton
@@ -28,8 +28,7 @@ export default function InputPassword( props ) {
                 </InputAdornment>
                 }
             />
-            {props.onSubmitted && !props.value && <span id='name-error' style={{ fontSize: '12px' }}>Please enter your password</span>}
-            { true === props.customSpan ? <span style={{ marginTop: '5px', fontSize: '12px' }}>( 6 characters minimum )</span> : `` }
+            {props.onSubmitted && !props.value && <span id='name-error' style={{ fontSize: '12px' }}>Please confirm your password</span>}
         </FormControl>
     )
 }

@@ -45,14 +45,16 @@ export default function LogInForm() {
                     onSubmitted={submitted} />
                 <InputPassword
                     value={values.password}
+                    showPassword={values.showPassword}
                     onHandleChange={handleChange}
                     onShowPassword={handleClickShowPassword}
-                    showPassword={values.showPassword}
+                    customSpan={false}
                     onSubmitted={submitted} />
                 <Link 
                     to="/forgot-password"
                     className={classes.forgotLink}>Forgot your password?</Link>
-                <InputSubmit 
+                <InputSubmit
+                    value="Log in"
                     onHandleClick={handleSubmit} />
 
             </form>
